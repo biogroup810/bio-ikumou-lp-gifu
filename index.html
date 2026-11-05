@@ -40,7 +40,10 @@
   <script>
   document.addEventListener('click', function (e) {
     var el = e.target && e.target.closest ? e.target.closest('.js-line, .js-hpb') : null;
-    if (el && window.fbq) { fbq('track', 'Lead'); }
+    if (el && window.fbq) {
+      fbq('track', 'Lead');
+      if (el.classList.contains('js-line')) { fbq('trackSingle', '1166466312914638', 'CompleteRegistration'); }
+    }
   });
   </script>
 </head>
